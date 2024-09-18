@@ -28,12 +28,22 @@ import LayoutContent from "../layouts/LayoutContent.astro";
         border: 1px solid var(--b);
         border-radius: 25px;
         margin-bottom: 20px;
+        @media (max-width: 768px) {
+            padding: 20px;
+            border-radius: 10px;
+        }
         h2 {
             font-size: 36px;
             margin-bottom: 40px;
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
         }
         .txt {
             line-height: 1.75;
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
         }
     }
 </style>

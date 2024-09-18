@@ -56,13 +56,16 @@ const nav = [
 
 <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script is:inline>
-    $(function () {
-        //クリックで動く
+    const openMenu = () => {
         $(".nav-open").click(function () {
             $(this).toggleClass("active");
             $(this).next("nav").slideToggle();
         });
-    });
+    };
+
+    openMenu();
+
+    document.addEventListener("astro:after-swap", openMenu);
 </script>
 
 <style lang="scss">
@@ -75,6 +78,11 @@ const nav = [
         border-radius: 25px;
         width: 260px;
         z-index: 999;
+        @media (max-width: 768px) {
+            position: fixed;
+            width: 220px;
+            padding: 15px 20px 0;
+        }
         &.fixed {
             position: fixed;
             top: 30px;
@@ -89,11 +97,17 @@ const nav = [
                 padding-inline-start: 0px;
                 border-top: 1px solid var(--b);
                 padding: 30px 0;
+                @media (max-width: 768px) {
+                    padding: 15px 0;
+                }
                 li.nav-item {
                     margin-bottom: 6px;
                     a.nav-link {
                         color: var(--b);
                         font-size: 18px;
+                        @media (max-width: 768px) {
+                            font-size: 16px;
+                        }
                     }
                 }
             }
@@ -105,6 +119,10 @@ const nav = [
             padding-bottom: 20px;
             position: relative;
             cursor: pointer;
+            @media (max-width: 768px) {
+                font-size: 20px;
+                padding-bottom: 15px;
+            }
         }
         .nav-open::before {
             /* 閉じている時 */

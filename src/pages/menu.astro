@@ -4,7 +4,7 @@ import LayoutContent from "../layouts/LayoutContent.astro";
 
 <LayoutContent title="Menu" name="Menu" url="mv_menu.jpg">
     <div class="content__inner">
-        <h2>Course PAVILION soecial Menu</h2>
+        <h2>Course PAVILION Special Menu</h2>
         <div class="txt">
             Welcome to C.D.TAKOH<br /><br />Japanese Yoshoku cuisine Yoshoku
             cuisine is one of cooking genreunique to Japan, inspired by
@@ -28,12 +28,22 @@ import LayoutContent from "../layouts/LayoutContent.astro";
         border: 1px solid var(--b);
         border-radius: 25px;
         margin-bottom: 20px;
+        @media (max-width: 768px) {
+            padding: 20px;
+            border-radius: 10px;
+        }
         h2 {
             font-size: 36px;
             margin-bottom: 40px;
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
         }
         .txt {
             line-height: 1.75;
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
         }
     }
 </style>

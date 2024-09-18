@@ -24,7 +24,7 @@ import { ViewTransitions } from "astro:transitions";
 		<slot />
 	</body>
 </html>
-<style is:global>
+<style is:global lang="scss">
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
@@ -37,5 +37,18 @@ import { ViewTransitions } from "astro:transitions";
 	}
 	body {
 		color: var(--b);
+	}
+
+	.pc {
+		display: block;
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+	.sp {
+		display: none;
+		@media (max-width: 768px) {
+			display: block;
+		}
 	}
 </style>

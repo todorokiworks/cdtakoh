@@ -16,6 +16,10 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 20px;
+        @media (max-width: 768px) {
+            height: 180px;
+            padding: 30px 0;
+        }
         div.glass {
             display: flex;
             justify-content: center;
@@ -30,6 +34,9 @@
             border-bottom-color: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            @media (max-width: 768px) {
+                padding: 30px 0;
+            }
             a.btn {
                 font-size: 24px;
                 display: block;
@@ -40,6 +47,11 @@
                 border: 1px solid var(--b);
                 transition: all 0.6s;
                 color: var(--b);
+                @media (max-width: 768px) {
+                    font-size: 20px;
+                    width: 260px;
+                    padding: 12px 0;
+                }
                 &:hover {
                     background: var(--b);
                     color: #000;

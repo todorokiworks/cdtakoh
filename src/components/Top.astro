@@ -34,7 +34,15 @@ import NavTop from "./parts/NavTop.astro";
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide"><Image src={slide01} alt="" /></div>
+        <div class="swiper-slide">
+          <picture>
+            <source
+              srcset="/img/restaurant_inside_mv-sp.png"
+              media="(max-width:768px)"
+            />
+            <img src="/img/restaurant_inside_mv.png" alt="" />
+          </picture>
+        </div>
       </div>
     </div>
   </div>
@@ -59,26 +67,41 @@ import NavTop from "./parts/NavTop.astro";
 <style lang="scss">
   section#top {
     padding: 20px 20px;
+    @media (max-width: 768px) {
+      padding: 10px;
+      height: 100vh;
+    }
     div.content__inner {
       position: relative;
-
+      @media (max-width: 768px) {
+        height: 100%;
+      }
       div.header {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 99;
+        @media (max-width: 768px) {
+          top: 45%;
+        }
         h1 {
           color: var(--b);
           font-size: 160px;
           font-weight: bold;
           text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 20px;
+          @media (max-width: 768px) {
+            font-size: 52px;
+          }
         }
         p {
           text-align: center;
           font-size: 24px;
           font-weight: 200;
           text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 40px;
+          @media (max-width: 768px) {
+            font-size: 16px;
+          }
         }
       }
 
@@ -100,6 +123,9 @@ import NavTop from "./parts/NavTop.astro";
           height: 42px;
           background: url("/img/mv_btn_frame.png") center center / cover
             no-repeat;
+          @media (max-width: 768px) {
+            bottom: 88px;
+          }
         }
         &::after {
           content: "";
@@ -110,6 +136,9 @@ import NavTop from "./parts/NavTop.astro";
           height: 42px;
           background: url("/img/mv_btn_frame.png") center center / cover
             no-repeat;
+          @media (max-width: 768px) {
+            bottom: 88px;
+          }
         }
         .reserveBtn {
           font-size: 24px;
@@ -121,6 +150,14 @@ import NavTop from "./parts/NavTop.astro";
           border: 1px solid var(--b);
           transition: all 0.6s;
           color: var(--b);
+          @media (max-width: 768px) {
+            font-size: 18px;
+            display: block;
+            min-width: 200px;
+            text-align: center;
+            border-radius: 50px;
+            padding: 10px 0;
+          }
           &:hover {
             background: var(--b);
             color: #000;
@@ -135,6 +172,11 @@ import NavTop from "./parts/NavTop.astro";
         z-index: 99;
         display: flex;
         align-items: center;
+        @media (max-width: 768px) {
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
         .glass {
           border: 1px solid var(--b);
           border-radius: 25px;
@@ -145,6 +187,9 @@ import NavTop from "./parts/NavTop.astro";
           border-bottom-color: rgba(255, 255, 255, 0.2);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
+          @media (max-width: 768px) {
+            min-height: 120px;
+          }
         }
         div.glass_left {
           text-align: center;
@@ -155,9 +200,15 @@ import NavTop from "./parts/NavTop.astro";
           padding: 0 20px;
           p.txt-lg {
             font-size: 32px;
+            @media (max-width: 768px) {
+              font-size: 22px;
+            }
           }
           p.txt-md {
             font-size: 14px;
+            @media (max-width: 768px) {
+              font-size: 10px;
+            }
           }
         }
         div.glass_right {
@@ -166,17 +217,26 @@ import NavTop from "./parts/NavTop.astro";
           div.menu {
             position: absolute;
             width: 60px;
+            @media (max-width: 768px) {
+              width: 45px;
+            }
             &:nth-child(1) {
               bottom: 100px;
               left: 50%;
               transform: translateX(-50%);
               z-index: 3;
+              @media (max-width: 768px) {
+                bottom: 65px;
+              }
             }
             &:nth-child(2) {
               bottom: 55px;
               left: 50%;
               transform: translateX(-50%);
               z-index: 2;
+              @media (max-width: 768px) {
+                bottom: 35px;
+              }
             }
             &:nth-child(3) {
               bottom: 10px;
@@ -191,6 +251,9 @@ import NavTop from "./parts/NavTop.astro";
       div.swiper {
         div.swiper-wrapper {
           div.swiper-slide {
+            @media (max-width: 768px) {
+              width: 100% !important;
+            }
             img {
               width: 100%;
               height: auto;

@@ -36,6 +36,11 @@ import LayoutLocation from "../layouts/LayoutLocation.astro";
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
+        @media (max-width: 768px) {
+            height: 500px;
+            padding: 20px 0px;
+            border-radius: 10px;
+        }
         &::before {
             content: "";
             width: 100%;
@@ -53,15 +58,25 @@ import LayoutLocation from "../layouts/LayoutLocation.astro";
         div.location__wrapper {
             position: relative;
             padding: 30px 50px;
+            @media (max-width: 768px) {
+                padding: 30px 10px;
+            }
             .location {
                 padding-bottom: 30px;
                 p.pref {
                     font-size: 36px;
                     font-weight: bold;
+                    @media (max-width: 768px) {
+                        font-size: 32px;
+                        margin-bottom: 10px;
+                    }
                 }
                 .txt {
                     font-size: 18px;
                     font-weight: 200;
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                    }
                 }
             }
         }
@@ -70,6 +85,10 @@ import LayoutLocation from "../layouts/LayoutLocation.astro";
             align-items: center;
             padding-top: 40px;
             border-top: 1px solid var(--b);
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
             a.mail {
                 display: flex;
                 justify-content: center;
@@ -80,9 +99,15 @@ import LayoutLocation from "../layouts/LayoutLocation.astro";
                 margin-right: 20px;
                 width: 50px;
                 height: 50px;
+                @media (max-width: 768px) {
+                    margin-bottom: 20px;
+                }
             }
             div.opening-txt {
                 p {
+                    @media (max-width: 768px) {
+                        font-size: 14px;
+                    }
                 }
             }
         }

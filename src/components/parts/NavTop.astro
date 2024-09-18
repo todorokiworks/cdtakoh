@@ -1,26 +1,36 @@
-<nav>
-    <ul class="nav-list">
-        <li>
-            <a href="/" class="current">Home</a>
-        </li>
-        <li>
-            <a href="menu">Menu</a>
-        </li>
-    </ul>
-    <ul class="nav-list">
-        <li>
-            <a href="about">About</a>
-        </li>
-        <li>
-            <a href="location">Location</a>
-        </li>
-        <li>
-            <a href="mailto:" class="icon"
-                ><img src="/img/icon_mail.png" alt="" /></a
-            >
-        </li>
-    </ul>
-</nav>
+---
+import AccordionMenu from "./AccordionMenu.astro";
+---
+
+<div class="pc">
+    <nav>
+        <ul class="nav-list">
+            <li>
+                <a href="/" class="current">Home</a>
+            </li>
+            <li>
+                <a href="menu">Menu</a>
+            </li>
+        </ul>
+        <ul class="nav-list">
+            <li>
+                <a href="about">About</a>
+            </li>
+            <li>
+                <a href="location">Location</a>
+            </li>
+            <li>
+                <a href="mailto:" class="icon"
+                    ><img src="/img/icon_mail.png" alt="" /></a
+                >
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="sp">
+    <AccordionMenu />
+</div>
 
 <style lang="scss">
     nav {
