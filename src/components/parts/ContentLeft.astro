@@ -1,0 +1,43 @@
+---
+import AccordionMenu from "./AccordionMenu.astro";
+
+type left = {
+    name: string;
+    url: string;
+    isLocation: boolean;
+};
+const { name, url, isLocation } = Astro.props;
+---
+
+<section
+    class:list={["mv", { narrow: isLocation }]}
+    style={`background:url(/img/${url})center center /cover no-repeat`}
+>
+    {isLocation ? "" : <AccordionMenu />}
+    <div class="contents__inner">
+        <h1>{name}</h1>
+    </div>
+</section>
+
+<style lang="scss">
+    section.mv {
+        width: 49%;
+        height: 80vh;
+        border-radius: 25px;
+        position: relative;
+        &.narrow {
+            width: 35%;
+        }
+        div.contents__inner {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            height: 100%;
+            padding: 40px;
+            h1 {
+                font-size: 80px;
+                text-shadow: rgba(255, 255, 255, 0.5) 0px 0px 20px;
+            }
+        }
+    }
+</style>

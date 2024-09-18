@@ -1,0 +1,72 @@
+---
+type nav = {
+    name: string;
+    url: string;
+};
+
+const nav = [
+    {
+        name: "Home",
+        url: "/",
+    },
+    {
+        name: "Menu",
+        url: "/menu",
+    },
+    {
+        name: "About",
+        url: "/about",
+    },
+    {
+        name: "Location",
+        url: "/location",
+    },
+    {
+        name: "Reservation",
+        url: "/reservation",
+    },
+];
+---
+
+<footer id="contentFooter">
+    <div class="contents__inner">
+        <ul class="footer-nav">
+            {
+                nav.map((item: nav) => (
+                    <li class="footer-item">
+                        <a href={item.url} class="footer-link">
+                            {item.name}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</footer>
+
+<style lang="scss">
+    footer#contentFooter {
+        background: url("/img/reservationBnr_bg.png") center center / cover
+            no-repeat;
+        height: 200px;
+        width: 100%;
+        padding: 40px 0;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        div.contents__inner {
+            ul.footer-nav {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                li.footer-item {
+                    a.footer-link {
+                        color: var(--b);
+                    }
+                }
+            }
+        }
+    }
+</style>

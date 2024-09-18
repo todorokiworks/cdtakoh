@@ -1,0 +1,124 @@
+---
+type nav = {
+    name: string;
+    url: string;
+};
+
+type isLocation = {
+    isLocation: boolean;
+};
+
+const { isLocation } = Astro.props;
+
+const nav = [
+    {
+        name: "Home",
+        url: "/",
+    },
+    {
+        name: "Menu",
+        url: "/menu",
+    },
+    {
+        name: "About",
+        url: "/about",
+    },
+    {
+        name: "Location",
+        url: "/location",
+    },
+    {
+        name: "Reservation",
+        url: "/reservation",
+    },
+];
+---
+
+<div class:list={["menu", { fixed: isLocation }]}>
+    <div class="nav-open">
+        <span class="line"></span>
+        C.D.TAKOH
+    </div>
+    <nav>
+        <ul>
+            {
+                nav.map((item: nav) => (
+                    <li class="nav-item">
+                        <a href={item.url} class="nav-link">
+                            {item.name}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</div>
+
+<script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script is:inline>
+    $(function () {
+        //クリックで動く
+        $(".nav-open").click(function () {
+            $(this).toggleClass("active");
+            $(this).next("nav").slideToggle();
+        });
+    });
+</script>
+
+<style lang="scss">
+    div.menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 20px 30px 0;
+        border-radius: 25px;
+        width: 260px;
+        z-index: 999;
+        &.fixed {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+        }
+        nav {
+            display: none;
+            ul {
+                list-style: none;
+                margin-block-start: 0;
+                margin-block-end: 0;
+                padding-inline-start: 0px;
+                border-top: 1px solid var(--b);
+                padding: 30px 0;
+                li.nav-item {
+                    margin-bottom: 6px;
+                    a.nav-link {
+                        color: var(--b);
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .nav-open {
+            font-size: 24px;
+            text-align: right;
+            padding-bottom: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+        .nav-open::before {
+            /* 閉じている時 */
+            content: "＋";
+            position: absolute;
+            left: 15px;
+            color: #e08330;
+        }
+        .nav-open.active::before {
+            /* 開いている時 */
+            content: "－";
+        }
+
+        span.line {
+        }
+    }
+</style>

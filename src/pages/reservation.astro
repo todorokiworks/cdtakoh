@@ -1,0 +1,57 @@
+---
+import LayoutContent from "../layouts/LayoutContent.astro";
+---
+
+<LayoutContent
+    title="Reservation"
+    name="Reservation"
+    url="mv_reservation.jpg"
+    isLocation={true}
+>
+    <div class="content__inner">
+        <h2>C.D.TAKOH<br />Reservation Policy</h2>
+        <div class="txt">
+            Please note that we may not be able to accommodate all food
+            allergies and dietary restrictions.<br />In accordance with our
+            concept of OMAKASE style, we regret to inform you that We are not
+            able to adjust irregulars.
+        </div>
+        <ul>
+            <li>
+                We serve lunch or dinner for a party of 4 to 6 people a day.
+            </li>
+            <li>every day We have irregular holidays.</li>
+            <li>Phone number.</li>
+            <li>No dress code.</li>
+            <li>child over 6 years old is counted as One person.</li>
+            <li>No smoking at dining area.</li>
+            <li>Reservations are available online only.</li>
+            <li>
+                We accept changes and cancellations until one week before
+                reservation.
+            </li>
+        </ul>
+    </div>
+</LayoutContent>
+
+<style lang="scss">
+    .content__inner {
+        padding: 60px 40px;
+        border: 1px solid var(--b);
+        border-radius: 25px;
+        margin-bottom: 20px;
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        .txt {
+            line-height: 1.75;
+        }
+        ul {
+            padding-inline-start: 20px;
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+</style>

@@ -1,0 +1,204 @@
+---
+import { Image } from "astro:assets";
+
+import slide01 from "/public/img/restaurant_inside_mv.png";
+import NavTop from "./parts/NavTop.astro";
+---
+
+<section id="top">
+  <div class="content__inner">
+    <NavTop />
+    <div class="header">
+      <h1>C.D.TAKOH</h1>
+      <p>EAST meets  WEST<br />JAPANESE  YOSHOKU CUISINE</p>
+    </div>
+
+    <div class="reserveBtn__wrapper">
+      <a href="/reservation" class="reserveBtn">Reservation</a>
+    </div>
+
+    <div class="glass__wrapper">
+      <div class="glass_left glass">
+        <p class="txt-lg">C.D.TAKOH</p>
+        <p class="txt-md">A special dining experience<br />at C.D.TAKOH</p>
+      </div>
+      <div class="glass_right glass">
+        <div class="menu"><img src="/img/glass_menu01.png" alt="" /></div>
+        <div class="menu"><img src="/img/glass_menu02.png" alt="" /></div>
+        <div class="menu"><img src="/img/glass_menu03.png" alt="" /></div>
+      </div>
+    </div>
+
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><Image src={slide01} alt="" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay, EffectFade } from "swiper/modules";
+  import "swiper/css/bundle";
+  import "swiper/css/effect-fade";
+  export const swiperConfig = {
+    modules: [Autoplay, EffectFade],
+    // Optional parameters
+    loop: true,
+    autoplay: { delay: 10000 },
+    effect: "fade",
+  };
+
+  const swiper = new Swiper(".swiper", swiperConfig);
+</script>
+
+<style lang="scss">
+  section#top {
+    padding: 20px 20px;
+    div.content__inner {
+      position: relative;
+
+      div.header {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+        h1 {
+          color: var(--b);
+          font-size: 160px;
+          font-weight: bold;
+          text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 20px;
+        }
+        p {
+          text-align: center;
+          font-size: 24px;
+          font-weight: 200;
+          text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 40px;
+        }
+      }
+
+      .reserveBtn__wrapper {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        background: #000;
+        z-index: 99;
+        padding: 20px 10px 20px 20px;
+        border-radius: 50px 0 0 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0px;
+          left: -41px;
+          width: 42px;
+          height: 42px;
+          background: url("/img/mv_btn_frame.png") center center / cover
+            no-repeat;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 107px;
+          right: -2px;
+          width: 42px;
+          height: 42px;
+          background: url("/img/mv_btn_frame.png") center center / cover
+            no-repeat;
+        }
+        .reserveBtn {
+          font-size: 24px;
+          display: block;
+          min-width: 260px;
+          text-align: center;
+          border-radius: 50px;
+          padding: 15px 0;
+          border: 1px solid var(--b);
+          transition: all 0.6s;
+          color: var(--b);
+          &:hover {
+            background: var(--b);
+            color: #000;
+          }
+        }
+      }
+
+      div.glass__wrapper {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        .glass {
+          border: 1px solid var(--b);
+          border-radius: 25px;
+          min-height: 170px;
+          background-color: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.4);
+          border-right-color: rgba(255, 255, 255, 0.2);
+          border-bottom-color: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+        }
+        div.glass_left {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding: 0 20px;
+          p.txt-lg {
+            font-size: 32px;
+          }
+          p.txt-md {
+            font-size: 14px;
+          }
+        }
+        div.glass_right {
+          padding: 10px;
+          width: 80px;
+          div.menu {
+            position: absolute;
+            width: 60px;
+            &:nth-child(1) {
+              bottom: 100px;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 3;
+            }
+            &:nth-child(2) {
+              bottom: 55px;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 2;
+            }
+            &:nth-child(3) {
+              bottom: 10px;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 1;
+            }
+          }
+        }
+      }
+
+      div.swiper {
+        div.swiper-wrapper {
+          div.swiper-slide {
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 2%;
+            }
+          }
+        }
+      }
+    }
+  }
+</style>

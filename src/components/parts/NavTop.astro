@@ -1,0 +1,76 @@
+<nav>
+    <ul class="nav-list">
+        <li>
+            <a href="/" class="current">Home</a>
+        </li>
+        <li>
+            <a href="menu">Menu</a>
+        </li>
+    </ul>
+    <ul class="nav-list">
+        <li>
+            <a href="about">About</a>
+        </li>
+        <li>
+            <a href="location">Location</a>
+        </li>
+        <li>
+            <a href="mailto:" class="icon"
+                ><img src="/img/icon_mail.png" alt="" /></a
+            >
+        </li>
+    </ul>
+</nav>
+
+<style lang="scss">
+    nav {
+        position: fixed;
+        z-index: 999;
+        width: 96%;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 50px;
+        border: 1px solid var(--b);
+        ul.nav-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-inline-start: 00px;
+            &:last-child {
+                justify-content: flex-end;
+            }
+            li {
+                a {
+                    font-size: 24px;
+                    display: block;
+                    min-width: 180px;
+                    text-align: center;
+                    border-radius: 50px;
+                    padding: 15px 0;
+                    border: 1px solid var(--b);
+                    transition: all 0.6s;
+                    &.current {
+                        background: var(--b);
+                        color: #000;
+                    }
+                    &:hover {
+                        background: var(--b);
+                        color: #000;
+                    }
+                    &.icon {
+                        min-width: 60px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+</style>

@@ -1,0 +1,35 @@
+---
+import Layout from "./Layout.astro";
+import ContentLeft from "../components/parts/ContentLeft.astro";
+import ReservationBnr from "../components/parts/ReservationBnr.astro";
+import ContentFooter from "../components/parts/ContentFooter.astro";
+import Logo from "../components/parts/Logo.astro";
+
+const { title, name, url } = Astro.props;
+---
+
+<Layout title={title}>
+    <div class="main">
+        <ContentLeft name={name} url={url} />
+        <section class="right">
+            <slot />
+            <ReservationBnr />
+            <ContentFooter />
+        </section>
+        <Logo />
+    </div>
+</Layout>
+
+<style lang="scss">
+    .main {
+        padding: 20px 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        .right {
+            width: 49%;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+    }
+</style>
