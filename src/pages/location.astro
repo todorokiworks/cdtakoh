@@ -26,6 +26,14 @@ import LayoutLocation from "../layouts/LayoutLocation.astro";
     </div>
 </LayoutLocation>
 
+<script>
+    import { gsap } from "gsap";
+    const content = document.querySelector(".contents__inner");
+
+    const tl = gsap.timeline();
+    tl.fromTo(content, 1, { opacity: "0%" }, { opacity: "100%", ease: "none" });
+</script>
+
 <style lang="scss">
     .contents__inner {
         height: 700px;

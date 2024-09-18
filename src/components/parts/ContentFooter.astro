@@ -28,7 +28,7 @@ const nav = [
 ];
 ---
 
-<footer id="contentFooter">
+<footer id="contentFooter" class="footer">
     <div class="contents__inner">
         <ul class="footer-nav">
             {
@@ -43,6 +43,26 @@ const nav = [
         </ul>
     </div>
 </footer>
+
+<script>
+    import { gsap } from "gsap";
+    const footer = document.querySelector(".footer");
+    const glass = document.querySelector(".glass__wrapper");
+    const btn = document.querySelector(".reserveBtn__wrapper");
+    const tl = gsap.timeline();
+    tl.fromTo(
+        footer,
+        1,
+        { opacity: "0%" },
+        { opacity: "100%", ease: "none" },
+    ).fromTo(
+        footer,
+        1,
+        { marginTop: "10px" },
+        { marginTop: "0px", ease: "none" },
+        "-=1.",
+    );
+</script>
 
 <style lang="scss">
     footer#contentFooter {

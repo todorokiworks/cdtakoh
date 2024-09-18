@@ -3,21 +3,21 @@ import AccordionMenu from "./AccordionMenu.astro";
 ---
 
 <div class="pc">
-    <nav>
+    <nav class="nav">
         <ul class="nav-list">
             <li>
-                <a href="/" class="current">Home</a>
+                <a href="/" class="current linkbtn">Home</a>
             </li>
             <li>
-                <a href="menu">Menu</a>
+                <a href="menu" class="linkbtn">Menu</a>
             </li>
         </ul>
         <ul class="nav-list">
             <li>
-                <a href="about">About</a>
+                <a href="about" class="linkbtn">About</a>
             </li>
             <li>
-                <a href="location">Location</a>
+                <a href="location" class="linkbtn">Location</a>
             </li>
             <li>
                 <a href="mailto:" class="icon"
@@ -31,6 +31,30 @@ import AccordionMenu from "./AccordionMenu.astro";
 <div class="sp">
     <AccordionMenu />
 </div>
+
+<script>
+    import { gsap } from "gsap";
+    const nav = document.querySelector(".nav");
+    const navlink = document.querySelectorAll(".linkbtn");
+    const glass = document.querySelector(".glass__wrapper");
+    const btn = document.querySelector(".reserveBtn__wrapper");
+    const tl = gsap.timeline();
+    tl.fromTo(nav, 1.5, { opacity: "0%" }, { opacity: "100%", ease: "none" })
+        .fromTo(
+            nav,
+            1,
+            { marginTop: "10px" },
+            { marginTop: "0px", ease: "none" },
+            "-=1.2",
+        )
+        .fromTo(
+            navlink,
+            0.7,
+            { minWidth: "160px" },
+            { minWidth: "180px", ease: "none" },
+            "-=1",
+        );
+</script>
 
 <style lang="scss">
     nav {
@@ -59,12 +83,13 @@ import AccordionMenu from "./AccordionMenu.astro";
                 a {
                     font-size: 24px;
                     display: block;
-                    min-width: 180px;
+                    min-width: 160px;
                     text-align: center;
                     border-radius: 50px;
                     padding: 15px 0;
                     border: 1px solid var(--b);
                     transition: all 0.6s;
+                    color: var(--b);
                     &.current {
                         background: var(--b);
                         color: #000;
