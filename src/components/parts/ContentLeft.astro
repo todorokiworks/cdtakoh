@@ -19,15 +19,6 @@ const { name, url, isLocation } = Astro.props;
     </div>
 </section>
 
-<script>
-    import { gsap } from "gsap";
-    const mv = document.querySelector(".mv");
-    const glass = document.querySelector(".glass__wrapper");
-    const btn = document.querySelector(".reserveBtn__wrapper");
-    const tl = gsap.timeline();
-    tl.fromTo(mv, 1, { opacity: "0%" }, { opacity: "100%", ease: "none" });
-</script>
-
 <style lang="scss">
     section.mv {
         width: 49%;

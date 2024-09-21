@@ -67,12 +67,7 @@ const nav = [
 
     document.addEventListener("astro:after-swap", openMenu);
 </script>
-<script>
-    import { gsap } from "gsap";
-    const menu = document.querySelector(".menu");
-    const tl = gsap.timeline();
-    tl.fromTo(menu, 1, { opacity: "0%" }, { opacity: "100%", ease: "none" });
-</script>
+
 <style lang="scss">
     div.menu {
         position: absolute;

@@ -59,32 +59,6 @@ import NavTop from "./parts/NavTop.astro";
   const swiper = new Swiper(".swiper", swiperConfig);
 </script>
 
-<script>
-  import { gsap } from "gsap";
-  const header = document.querySelector(".header");
-  const glass = document.querySelector(".glass__wrapper");
-  const btn = document.querySelector(".reserveBtn__wrapper");
-  const tl = gsap.timeline();
-  tl.from(header, 1, { opacity: "0%" })
-    .to(header, 1, { opacity: "100%" })
-    .fromTo(
-      header,
-      1,
-      { marginTop: "10px" },
-      { marginTop: "0px", ease: "none" },
-      "-=1.2",
-    )
-    .fromTo(
-      glass,
-      1,
-      { opacity: "0%" },
-      { opacity: "100%", ease: "none" },
-      "-=1",
-    )
-    .fromTo(btn, 2, { opacity: "0%" }, { opacity: "100%", ease: "none" }, "-=")
-    .fromTo(btn, 1, { bottom: "10px" }, { bottom: "0", ease: "none" }, "-=2");
-</script>
-
 <style lang="scss">
   section#top {
     padding: 20px 20px;

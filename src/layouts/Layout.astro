@@ -55,6 +55,74 @@ const { title } = Astro.props;
 	<body>
 		<slot />
 	</body>
+
+	<script>
+		import { gsap } from "gsap";
+		const header = document.querySelector(".header");
+		const glass = document.querySelector(".glass__wrapper");
+		const btn = document.querySelector(".reserveBtn__wrapper");
+		const tl = gsap.timeline();
+		tl.from(header, 1, { opacity: "0%" })
+			.to(header, 1, { opacity: "100%" })
+			.fromTo(
+				header,
+				1,
+				{ marginTop: "10px" },
+				{ marginTop: "0px", ease: "none" },
+				"-=1.2",
+			)
+			.fromTo(
+				glass,
+				1,
+				{ opacity: "0%" },
+				{ opacity: "100%", ease: "none" },
+				"-=1",
+			)
+			.fromTo(
+				btn,
+				2,
+				{ opacity: "0%" },
+				{ opacity: "100%", ease: "none" },
+				"-=",
+			)
+			.fromTo(
+				btn,
+				1,
+				{ bottom: "10px" },
+				{ bottom: "0", ease: "none" },
+				"-=2",
+			);
+
+		const content = document.querySelector(".content__inner");
+
+		const tl2 = gsap.timeline();
+		tl2.fromTo(
+			content,
+			1,
+			{ opacity: "0%" },
+			{ opacity: "100%", ease: "none" },
+		).fromTo(
+			content,
+			1,
+			{ marginTop: "10px" },
+			{ marginTop: "0px", ease: "none" },
+			"-=1.3",
+		);
+
+		const mv = document.querySelector(".mv");
+
+		const tl3 = gsap.timeline();
+		tl3.fromTo(mv, 1, { opacity: "0%" }, { opacity: "100%", ease: "none" });
+
+		const menu = document.querySelector(".menu");
+		const tl4 = gsap.timeline();
+		tl4.fromTo(
+			menu,
+			1,
+			{ opacity: "0%" },
+			{ opacity: "100%", ease: "none" },
+		);
+	</script>
 	<style is:global lang="scss">
 		:root {
 			--accent: 136, 58, 234;
