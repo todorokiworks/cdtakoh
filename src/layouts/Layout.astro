@@ -52,36 +52,36 @@ import { ViewTransitions } from "astro:transitions";
 			/>
 		</noscript>
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
 		<slot />
-	</body>
-</html>
-<style is:global lang="scss">
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--b: #efe7d2;
-	}
-	html {
-		font-family: "Sora", sans-serif;
-		background: #000;
-	}
-	body {
-		color: var(--b);
-	}
+	</body><style is:global lang="scss">
+		:root {
+			--accent: 136, 58, 234;
+			--accent-light: 224, 204, 250;
+			--accent-dark: 49, 10, 101;
+			--b: #efe7d2;
+		}
+		html {
+			font-family: "Sora", sans-serif;
+			background: #000;
+		}
+		body {
+			color: var(--b);
+		}
 
-	.pc {
-		display: block;
-		@media (max-width: 768px) {
-			display: none;
-		}
-	}
-	.sp {
-		display: none;
-		@media (max-width: 768px) {
+		.pc {
 			display: block;
+			@media (max-width: 768px) {
+				display: none;
+			}
 		}
-	}
-</style>
+		.sp {
+			display: none;
+			@media (max-width: 768px) {
+				display: block;
+			}
+		}
+	</style>
+</html>
