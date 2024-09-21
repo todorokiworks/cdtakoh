@@ -108,7 +108,8 @@ import NavTop from "./parts/NavTop.astro";
           color: var(--b);
           font-size: 160px;
           font-weight: bold;
-          text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 20px;
+          /*text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 20px;*/
+          animation: headerGlow 5s linear infinite;
           @media (max-width: 768px) {
             font-size: 52px;
           }
@@ -312,12 +313,15 @@ import NavTop from "./parts/NavTop.astro";
     }
   }
 
-  @keyframes scaleUp {
+  @keyframes headerGlow {
     0% {
-      transform: scale(100%);
+      text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 20px;
+    }
+    50% {
+      text-shadow: rgba(255, 255, 255, 0.8) 0px 0px 30px;
     }
     100% {
-      transform: scale(115%);
+      text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 20px;
     }
   }
 </style>
