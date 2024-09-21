@@ -31,15 +31,13 @@ import NavTop from "./parts/NavTop.astro";
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide">
-          <picture>
-            <source
-              srcset="/img/restaurant_inside_mv-sp.png"
-              media="(max-width:768px)"
-            />
-            <img src="/img/restaurant_inside_mv.png" alt="" />
-          </picture>
-        </div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
       </div>
     </div>
   </div>
@@ -53,8 +51,8 @@ import NavTop from "./parts/NavTop.astro";
   export const swiperConfig = {
     modules: [Autoplay, EffectFade],
     // Optional parameters
-    loop: true,
-    autoplay: { delay: 10000 },
+    loop: false,
+    autoplay: { delay: 5000 },
     effect: "fade",
   };
 
@@ -91,7 +89,6 @@ import NavTop from "./parts/NavTop.astro";
     padding: 20px 20px;
     @media (max-width: 768px) {
       padding: 10px;
-      height: 100vh;
     }
     div.content__inner {
       position: relative;
@@ -133,8 +130,8 @@ import NavTop from "./parts/NavTop.astro";
         right: 0px;
         background: #000;
         z-index: 99;
-        padding: 20px 10px 20px 20px;
-        border-radius: 50px 0 0 0;
+        padding: 20px 10px 20px 15px;
+        border-radius: 35px 0 0 0;
 
         &::before {
           content: "";
@@ -146,7 +143,7 @@ import NavTop from "./parts/NavTop.astro";
           background: url("/img/mv_btn_frame.png") center center / cover
             no-repeat;
           @media (max-width: 768px) {
-            bottom: 88px;
+            bottom: 10px;
           }
         }
         &::after {
@@ -207,8 +204,8 @@ import NavTop from "./parts/NavTop.astro";
           border: 1px solid rgba(255, 255, 255, 0.4);
           border-right-color: rgba(255, 255, 255, 0.2);
           border-bottom-color: rgba(255, 255, 255, 0.2);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(22px);
+          -webkit-backdrop-filter: blur(22px);
           @media (max-width: 768px) {
             min-height: 120px;
           }
@@ -271,19 +268,56 @@ import NavTop from "./parts/NavTop.astro";
       }
 
       div.swiper {
+        width: 100%;
+        height: 100vh;
+
         div.swiper-wrapper {
+          overflow: hidden;
           div.swiper-slide {
             @media (max-width: 768px) {
               width: 100% !important;
             }
-            img {
-              width: 100%;
-              height: auto;
-              border-radius: 2%;
+
+            &:first-child {
+              background: url("/img/slider01.png") center center / cover
+                no-repeat;
+            }
+            &:nth-child(2) {
+              background: url("/img/slider02.png") center center / cover
+                no-repeat;
+            }
+            &:nth-child(3) {
+              background: url("/img/slider03.png") center center / cover
+                no-repeat;
+            }
+            &:nth-child(4) {
+              background: url("/img/slider01.png") center center / cover
+                no-repeat;
+            }
+            &:nth-child(5) {
+              background: url("/img/slider02.png") center center / cover
+                no-repeat;
+            }
+            &:nth-child(6) {
+              background: url("/img/slider03.png") center center / cover
+                no-repeat;
+            }
+            &:nth-child(7) {
+              background: url("/img/slider01.png") center center / cover
+                no-repeat;
             }
           }
         }
       }
+    }
+  }
+
+  @keyframes scaleUp {
+    0% {
+      transform: scale(100%);
+    }
+    100% {
+      transform: scale(115%);
     }
   }
 </style>
