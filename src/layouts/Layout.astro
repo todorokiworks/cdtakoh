@@ -1,6 +1,4 @@
 ---
-import "@fontsource-variable/sora";
-import "@fontsource-variable/noto-sans";
 interface Props {
 	title: string;
 }
@@ -18,6 +16,41 @@ import { ViewTransitions } from "astro:transitions";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="stylesheet" href="/style/reset.css" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			media="print"
+			onload="this.media='all'"
+			href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+		/>
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			media="print"
+			onload="this.media='all'"
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"
+		/>
+		<!-- no-JS fallback -->
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+				rel="stylesheet"
+			/>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
 		<title>{title}</title>
 	</head>
 	<body>
@@ -32,7 +65,7 @@ import { ViewTransitions } from "astro:transitions";
 		--b: #efe7d2;
 	}
 	html {
-		font-family: "Sora Variable", sans-serif;
+		font-family: "Sora", sans-serif;
 		background: #000;
 	}
 	body {
