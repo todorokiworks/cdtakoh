@@ -2,23 +2,24 @@
 import LayoutContent from "../layouts/LayoutContent.astro";
 ---
 
-<LayoutContent title="About" name="About" url="mv_about.jpg">
+<LayoutContent title="About" name="About" url="mv_about.png">
     <div class="content__inner">
         <h2>An exclusive meal encounter at C.D.TAKOH</h2>
-        <div class="txt">
-            Welcome to C.D.TAKOH<br /><br />Japanese Yoshoku cuisine Yoshoku
-            cuisine is one of cooking genreunique to Japan, inspired by
-            classicwestern culinary art.<br /><br />It is the creative blessings
-            of fresh Japanese ingredients and heating magic of cooking.<br /><br
-            />We invites you on our innovative culinary journey which may not be
-            experienced anywhere else. <br />It is allowed to only one party of
-            4 to 6 people a day. The journey is offered by OMAKASE style, chef's
-            choice of course and wine by the bottle. <br /><br />Completely
-            private,The kitchen bar with OMAKASE style is our Most refined yet
-            intimate dinning expression.<br /><br />
+        <p class="txt">Welcome to C.D.TAKOH</p>
+        <p class="txt">
+            Japanese Yoshoku cuisine Yoshoku cuisine is one of cooking
+            genreunique to Japan, inspired by classicwestern culinary art.<br
+            /><br />It is the creative blessings of fresh Japanese ingredients
+            and heating magic of cooking.<br /><br />We invites you on our
+            innovative culinary journey which may not be experienced anywhere
+            else. <br />It is allowed to only one party of 4 to 6 people a day.
+            The journey is offered by OMAKASE style, chef's choice of course and
+            wine by the bottle. <br /><br />Completely private,The kitchen bar
+            with OMAKASE style is our Most refined yet intimate dinning
+            expression.<br /><br />
             Relax and enjoy our meticulously crafted dishes and its harmony with
             premium wines.
-        </div>
+        </p>
     </div>
 </LayoutContent>
 
@@ -37,7 +38,7 @@ import LayoutContent from "../layouts/LayoutContent.astro";
         1,
         { marginTop: "10px" },
         { marginTop: "0px", ease: "none" },
-        "-=1.",
+        "-=1.3",
     );
 </script>
 
@@ -47,8 +48,9 @@ import LayoutContent from "../layouts/LayoutContent.astro";
         border: 1px solid var(--b);
         border-radius: 25px;
         margin-bottom: 20px;
+        font-family: "Noto Sans Variable", sans-serif;
         @media (max-width: 768px) {
-            padding: 20px;
+            padding: 30px 20px;
             border-radius: 10px;
         }
         h2 {

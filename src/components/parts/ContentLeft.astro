@@ -57,11 +57,25 @@ const { name, url, isLocation } = Astro.props;
             }
             h1 {
                 font-size: 80px;
-                text-shadow: rgba(255, 255, 255, 0.5) 0px 0px 20px;
+                animation: headerGlow 5s linear infinite;
+                @media (max-width: 1160px) {
+                    font-size: 50px;
+                }
                 @media (max-width: 768px) {
                     font-size: 40px;
                 }
             }
+        }
+    }
+    @keyframes headerGlow {
+        0% {
+            text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 20px;
+        }
+        50% {
+            text-shadow: rgba(255, 255, 255, 0.8) 0px 0px 30px;
+        }
+        100% {
+            text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 20px;
         }
     }
 </style>
