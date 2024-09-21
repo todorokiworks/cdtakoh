@@ -4,28 +4,6 @@
     </div>
 </div>
 
-<script>
-    import { gsap } from "gsap";
-    const reservationBnr__wrapper = document.querySelector(
-        ".reservationBnr__wrapper",
-    );
-    const glass = document.querySelector(".glass__wrapper");
-    const btn = document.querySelector(".reserveBtn__wrapper");
-    const tl = gsap.timeline();
-    tl.fromTo(
-        reservationBnr__wrapper,
-        1,
-        { opacity: "0%" },
-        { opacity: "100%", ease: "none" },
-    ).fromTo(
-        reservationBnr__wrapper,
-        1,
-        { marginTop: "10px" },
-        { marginTop: "0px", ease: "none" },
-        "-=1.",
-    );
-</script>
-
 <style lang="scss">
     div.reservationBnr__wrapper {
         background: url("/img/reservationBnr_bg.png") center center / cover
