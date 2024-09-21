@@ -31,13 +31,30 @@ import NavTop from "./parts/NavTop.astro";
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide"></div>
-        <div class="swiper-slide"></div>
-        <div class="swiper-slide"></div>
-        <div class="swiper-slide"></div>
-        <div class="swiper-slide"></div>
-        <div class="swiper-slide"></div>
-        <div class="swiper-slide"></div>
+        <div class="swiper-slide">
+          <div class="slide-img"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-img"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-img"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-img"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-img"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-img"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-img"></div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slide-img"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -251,37 +268,56 @@ import NavTop from "./parts/NavTop.astro";
         div.swiper-wrapper {
           overflow: hidden;
           div.swiper-slide {
+            overflow: hidden;
             @media (max-width: 768px) {
               width: 100% !important;
             }
-
+            .slide-img {
+              width: 100%;
+              height: 100%;
+              animation: scaleUp 12s linear infinite;
+            }
             &:first-child {
-              background: url("/img/slider01.jpg") center center / cover
-                no-repeat;
+              .slide-img {
+                background: url("/img/slider01.jpg") center center / cover
+                  no-repeat;
+              }
             }
             &:nth-child(2) {
-              background: url("/img/slider02.jpg") center center / cover
-                no-repeat;
+              .slide-img {
+                background: url("/img/slider02.jpg") center center / cover
+                  no-repeat;
+              }
             }
             &:nth-child(3) {
-              background: url("/img/slider03.jpg") center center / cover
-                no-repeat;
+              .slide-img {
+                background: url("/img/slider03.jpg") center center / cover
+                  no-repeat;
+              }
             }
             &:nth-child(4) {
-              background: url("/img/slider01.jpg") center center / cover
-                no-repeat;
+              .slide-img {
+                background: url("/img/slider01.jpg") center center / cover
+                  no-repeat;
+              }
             }
             &:nth-child(5) {
-              background: url("/img/slider02.jpg") center center / cover
-                no-repeat;
+              .slide-img {
+                background: url("/img/slider02.jpg") center center / cover
+                  no-repeat;
+              }
             }
             &:nth-child(6) {
-              background: url("/img/slider03.jpg") center center / cover
-                no-repeat;
+              .slide-img {
+                background: url("/img/slider03.jpg") center center / cover
+                  no-repeat;
+              }
             }
             &:nth-child(7) {
-              background: url("/img/slider01.jpg") center center / cover
-                no-repeat;
+              .slide-img {
+                background: url("/img/slider01.jpg") center center / cover
+                  no-repeat;
+              }
             }
           }
         }
@@ -298,6 +334,16 @@ import NavTop from "./parts/NavTop.astro";
     }
     100% {
       text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 20px;
+    }
+  }
+
+  @keyframes scaleUp {
+    0% {
+      transform: scale(100%);
+    }
+
+    100% {
+      transform: scale(110%);
     }
   }
 </style>
