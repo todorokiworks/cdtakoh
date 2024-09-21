@@ -13,7 +13,7 @@ const { name, url, isLocation } = Astro.props;
     class:list={["mv", { narrow: isLocation }]}
     style={`background:url(/img/${url})center center /cover no-repeat`}
 >
-    {isLocation ? "" : <AccordionMenu />}
+    {isLocation ? "" : <AccordionMenu client:load />}
     <div class="contents__inner">
         <h1>{name}</h1>
     </div>
