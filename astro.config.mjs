@@ -7,5 +7,5 @@ import playformInline from "@playform/inline";
 // https://astro.build/config
 export default defineConfig({
   // @ts-ignore
-  integrations: [playformCompress(), playformInline()]
+  integrations: [playformCompress()]
 });
