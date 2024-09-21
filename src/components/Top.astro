@@ -65,7 +65,8 @@ import NavTop from "./parts/NavTop.astro";
   const glass = document.querySelector(".glass__wrapper");
   const btn = document.querySelector(".reserveBtn__wrapper");
   const tl = gsap.timeline();
-  tl.fromTo(header, 1, { opacity: "0%" }, { opacity: "100%", ease: "none" })
+  tl.from(header, 1, { opacity: "0%" })
+    .to(header, 1, { opacity: "100%" })
     .fromTo(
       header,
       1,
@@ -101,6 +102,7 @@ import NavTop from "./parts/NavTop.astro";
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 99;
+        opacity: 1;
         @media (max-width: 768px) {
           top: 45%;
         }
