@@ -6,23 +6,65 @@ import LayoutLocation from "../layouts/LayoutLocation.astro";
 <LayoutContent title="Menu | C.D.TAKOH" name="Menu" url="mv_menu.png">
     <div class="content__inner">
         <h2>Course PAVILION Special Menu</h2>
-        <p class="txt">Welcome to C.D.TAKOH</p>
-        <p class="txt">
-            Japanese Yoshoku cuisine Yoshoku cuisine is one of cooking
-            genreunique to Japan, inspired by classicwestern culinary art.<br
-            /><br />It is the creative blessings of fresh Japanese ingredients
-            and heating magic of cooking.<br /><br />We invites you on our
-            innovative culinary journey which may not be experienced anywhere
-            else. <br />It is allowed to only one party of 4 to 6 people a day.
-            The journey is offered by OMAKASE style, chef's choice of course and
-            wine by the bottle. <br /><br />Completely private,The kitchen bar
-            with OMAKASE style is our Most refined yet intimate dinning
-            expression.<br /><br />
-            Relax and enjoy our meticulously crafted dishes and its harmony with
-            premium wines.
-        </p>
+        <p class="txt">Course serves</p>
+        <ul class="flow">
+            <li>Appetizers</li>
+            <li>Signature salad soup</li>
+            <li>Today’s main dish</li>
+            <li>Our specialty</li>
+            <li>Dessert</li>
+        </ul>
+        <p class="txt">Course meal including</p>
+        <ul class="menu">
+            <li>Seasonal appetizers and signature salad</li>
+            <li>Our specialties Rich demi-glace sauce omelette riceT</li>
+            <li>The highest grade Japanese beef cutlet sandwich</li>
+            <li>Seasonal desserts</li>
+        </ul>
+
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="/img/slider-menu01.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="/img/slider-menu02.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="/img/slider-menu03.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="/img/slider-menu04.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="/img/slider-menu05.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="/img/slider-menu06.jpg" alt="" />
+                </div>
+            </div>
+        </div>
     </div>
 </LayoutContent>
+
+<script>
+    import Swiper from "swiper";
+    import { Autoplay, EffectFade } from "swiper/modules";
+    import "swiper/css/bundle";
+    import "swiper/css/effect-fade";
+    export const swiperConfig = {
+        modules: [Autoplay, EffectFade],
+        // Optional parameters
+        loop: false,
+        autoplay: { delay: 5000 },
+        effect: "fade",
+    };
+
+    const swiper = new Swiper(".swiper", swiperConfig);
+</script>
 
 <style lang="scss">
     .content__inner {
@@ -40,14 +82,17 @@ import LayoutLocation from "../layouts/LayoutLocation.astro";
             margin-bottom: 40px;
             @media (max-width: 768px) {
                 font-size: 24px;
-                margin-bottom: 15px;
+                margin-bottom: 30px;
             }
         }
-        .txt {
-            line-height: 1.75;
-            @media (max-width: 768px) {
-                font-size: 14px;
-                line-height: 2;
+        ul {
+            padding-inline-start: 20px;
+            margin-bottom: 40px;
+            li {
+                margin-bottom: 10px;
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
             }
         }
     }
