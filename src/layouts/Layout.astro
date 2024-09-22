@@ -60,12 +60,56 @@ const { title } = Astro.props;
 		<slot />
 	</body><script>
 		import { gsap } from "gsap";
-		const header = document.querySelector(".header");
+		const c = document.querySelector(".c");
+		const d = document.querySelector(".d");
+		const t = document.querySelector(".t");
+		const a = document.querySelector(".a");
+		const k = document.querySelector(".k");
+		const o = document.querySelector(".o");
+		const h = document.querySelector(".h");
+		const header = document.querySelector(".h-txt");
 		const glass = document.querySelector(".glass__wrapper");
 		const btn = document.querySelector(".reserveBtn__wrapper");
 		const tl = gsap.timeline();
-		tl.from(header, 1, { opacity: "0%" })
-			.to(header, 1, { opacity: "100%" })
+		tl.fromTo(c, 1, { opacity: "0%" }, { opacity: "100%", ease: "none" })
+			.fromTo(
+				d,
+				0.3,
+				{ opacity: "0%" },
+				{ opacity: "100%", ease: "none" },
+			)
+			.fromTo(
+				t,
+				0.3,
+				{ opacity: "0%" },
+				{ opacity: "100%", ease: "none" },
+			)
+			.fromTo(
+				a,
+				0.3,
+				{ opacity: "0%" },
+				{ opacity: "100%", ease: "none" },
+			)
+
+			.fromTo(
+				k,
+				0.3,
+				{ opacity: "0%" },
+				{ opacity: "100%", ease: "none" },
+			)
+			.fromTo(
+				o,
+				0.3,
+				{ opacity: "0%" },
+				{ opacity: "100%", ease: "none" },
+			)
+			.fromTo(
+				h,
+				0.3,
+				{ opacity: "0%" },
+				{ opacity: "100%", ease: "none" },
+			)
+
 			.fromTo(
 				header,
 				0.5,
