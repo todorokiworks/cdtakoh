@@ -1,0 +1,45 @@
+---
+import Layout from "./Layout.astro";
+import ContentLeft from "../components/parts/ContentLeft.astro";
+import ReservationBnr from "../components/parts/ReservationBnr.astro";
+import ContentFooter from "../components/parts/ContentFooter.astro";
+import Logo from "../components/parts/Logo.astro";
+import AccordionMenu from "../components/parts/AccordionMenu.astro";
+import ReservationMailBnr from "../components/parts/ReservationMailBnr.astro";
+
+const { title, name, url, isLocation } = Astro.props;
+---
+
+<Layout title={title}>
+    <div class="main">
+        <ContentLeft name={name} url={url} isLocation={true} />
+        <section class="right">
+            <AccordionMenu isLocation={true} />
+            <slot />
+            <ReservationMailBnr />
+            <ContentFooter />
+        </section>
+        <Logo />
+    </div>
+</Layout>
+
+<style lang="scss">
+    .main {
+        padding: 20px 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            padding: 10px;
+        }
+        .right {
+            width: 65%;
+            @media (max-width: 768px) {
+                width: 100%;
+                height: auto;
+                overflow-y: auto;
+            }
+        }
+    }
+</style>
