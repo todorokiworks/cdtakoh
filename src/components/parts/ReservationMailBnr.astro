@@ -59,14 +59,19 @@
                     padding: 12px 0;
                 }
                 &:hover {
-                    background: var(--b);
+                    background: rgba(#efe7d2, 0.4);
                     color: #000;
+                    .icon {
+                        border: 1px solid var(--b);
+                        padding: 10px;
+                    }
                 }
                 .icon {
                     margin-right: 20px;
                     display: block;
                     border-radius: 50%;
-                    padding: 0px;
+
+                    transition: all 0.3s;
                 }
             }
         }
