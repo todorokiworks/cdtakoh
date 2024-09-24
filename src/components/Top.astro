@@ -7,6 +7,7 @@ import NavTop from "./parts/NavTop.astro";
     <NavTop />
     <div class="header">
       <h1>
+        <span class="logo"><img src="/img/logo.png" alt="" /></span>
         <span class="c">C.</span>
         <span class="d">D.</span>
         <span class="t">T</span>
@@ -14,6 +15,7 @@ import NavTop from "./parts/NavTop.astro";
         <span class="k">K</span>
         <span class="o">O</span>
         <span class="h">H</span>
+        <span class="two">2</span>
       </h1>
       <p class="h-txt">EAST meets WEST<br />JAPANESE YOSHOKU CUISINE</p>
     </div>
@@ -24,8 +26,8 @@ import NavTop from "./parts/NavTop.astro";
 
     <div class="glass__wrapper">
       <div class="glass_left glass">
-        <p class="txt-lg">C.D.TAKOH</p>
-        <p class="txt-md">A special dining experience<br />at C.D.TAKOH</p>
+        <p class="txt-lg">C.D.TAKOH2</p>
+        <p class="txt-md">A special dining experience<br />at C.D.TAKOH2</p>
       </div>
       <div class="glass_right glass">
         <div class="menu"><img src="/img/glass_menu01.png" alt="" /></div>
@@ -108,9 +110,11 @@ import NavTop from "./parts/NavTop.astro";
         }
         h1 {
           color: var(--b);
-          font-size: 160px;
+          font-size: 130px;
           font-weight: bold;
           display: flex;
+          align-items: flex-end;
+          position: relative;
           /*text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 20px;*/
           animation: headerGlow 5s linear infinite;
           @media (max-width: 768px) {
@@ -118,6 +122,22 @@ import NavTop from "./parts/NavTop.astro";
           }
           span {
             display: block;
+          }
+          span.logo {
+            width: 200px;
+            margin-right: 20px;
+            @media (max-width: 1120px) {
+              position: absolute;
+              top: -125px;
+              left: 48%;
+              transform: translateX(-50%);
+              width: 160px;
+              margin-right: 0px;
+            }
+            @media (max-width: 768px) {
+              width: 100px;
+              top: -90px;
+            }
           }
         }
         p {
