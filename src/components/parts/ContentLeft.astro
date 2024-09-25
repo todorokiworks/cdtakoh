@@ -15,7 +15,9 @@ const { name, url, isLocation } = Astro.props;
 >
     {isLocation ? "" : <AccordionMenu />}
     <div class="contents__inner">
-        <h1>{name}</h1>
+        <h1>
+            <span class="logo"><img src="/img/logo.png" alt="" /></span>{name}
+        </h1>
     </div>
 </section>
 
@@ -47,13 +49,25 @@ const { name, url, isLocation } = Astro.props;
                 padding: 10px;
             }
             h1 {
-                font-size: 80px;
+                font-size: 60px;
                 animation: headerGlow 5s linear infinite;
+                display: flex;
+                align-items: center;
                 @media (max-width: 1160px) {
                     font-size: 50px;
                 }
                 @media (max-width: 768px) {
                     font-size: 40px;
+                }
+
+                .logo {
+                    width: 100px;
+                    display: block;
+                    margin-right: 20px;
+                    @media (max-width: 768px) {
+                        width: 60px;
+                        margin-right: 10px;
+                    }
                 }
             }
         }
