@@ -73,57 +73,7 @@ const { title } = Astro.props;
 		const glass = document.querySelector(".glass__wrapper");
 		const btn = document.querySelector(".reserveBtn__wrapper");
 		const tl = gsap.timeline();
-		tl.fromTo(logo, 1, { opacity: "0%" }, { opacity: "100%", ease: "none" })
-			.fromTo(
-				c,
-				0.3,
-				{ opacity: "0%" },
-				{ opacity: "100%", ease: "none" },
-			)
-			.fromTo(
-				d,
-				0.3,
-				{ opacity: "0%" },
-				{ opacity: "100%", ease: "none" },
-			)
-			.fromTo(
-				t,
-				0.3,
-				{ opacity: "0%" },
-				{ opacity: "100%", ease: "none" },
-			)
-			.fromTo(
-				a,
-				0.3,
-				{ opacity: "0%" },
-				{ opacity: "100%", ease: "none" },
-			)
-
-			.fromTo(
-				k,
-				0.3,
-				{ opacity: "0%" },
-				{ opacity: "100%", ease: "none" },
-			)
-			.fromTo(
-				o,
-				0.3,
-				{ opacity: "0%" },
-				{ opacity: "100%", ease: "none" },
-			)
-			.fromTo(
-				h,
-				0.3,
-				{ opacity: "0%" },
-				{ opacity: "100%", ease: "none" },
-			)
-			.fromTo(
-				two,
-				0.3,
-				{ opacity: "0%" },
-				{ opacity: "100%", ease: "none" },
-			)
-
+		tl.fromTo(logo, 2, { opacity: "0%" }, { opacity: "100%", ease: "none" })
 			.fromTo(
 				header,
 				0.5,
